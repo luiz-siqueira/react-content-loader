@@ -11,6 +11,7 @@ export type WrapProps = {
 const Wrap = (props: WrapProps): React.Element<*> => {
   const idClip = props.uniquekey ? `${props.uniquekey}-idClip` : uid()
   const idGradient = props.uniquekey ? `${props.uniquekey}-idGradient` : uid()
+  const urlPrefix = props.urlPrefix || '';
 
   return (
     <svg
@@ -21,8 +22,8 @@ const Wrap = (props: WrapProps): React.Element<*> => {
       className={props.className}
     >
       <rect
-        style={{ fill: `url(#${idGradient})` }}
-        clipPath={`url(#${idClip})`}
+        style={{ fill: `url(${urlPrefix}#${idGradient})` }}
+        clipPath={`url(${urlPrefix}#${idClip})`}
         x="0"
         y="0"
         width={props.width}
