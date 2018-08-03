@@ -22,6 +22,7 @@ export type Props = {
   secondaryOpacity: number,
   style: { [key: string]: any },
   uniquekey: string,
+  urlPrefix: string,
 }
 
 export const defaultProps = {
